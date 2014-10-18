@@ -1,0 +1,37 @@
+Linear Regression Model Builder
+========================================================
+author: Vladimir Miliavsky
+date: 10/18/2014
+
+Overview
+========================================================
+
+- This is an interactive tool for linear regression model selection.  
+- It operates on mtcars dataset.
+- The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).  
+- See more details about the dataset in ***?mtcars***.  
+
+Tool description
+========================================================
+
+- Variable selection is not a trivial task in building multivariable regression model.  
+- This tool makes this task easier.  
+- Just select what variables you want in the model and press ***Submit*** button.  
+- Then see the model summary and diagnostics in the main panel.  
+
+Example of Summary
+========================================================
+
+```{r, echo=FALSE}
+data(mtcars)
+model <- lm(mpg ~ wt + qsec + am, mtcars)
+summary(model)
+```
+
+Example of Diagnostics
+========================================================
+
+```{r, echo=FALSE}
+par(mfrow = c(2,2))
+plot(model)
+```
